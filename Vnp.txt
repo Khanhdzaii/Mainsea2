@@ -1,0 +1,98 @@
+HttpService = game:GetService("HttpService") 
+ Webhook_URL =  "https://discord.com/api/webhooks/1254831918071939073/Mm0hes0K61USp-XxdJnjyTfYAjTrLwOnNiuqTO9RtUrE27Qv0BcIytSAZhYMv-xBSfsB" 
+local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
+httprequest(
+ { 
+ Url = Webhook_URL, 
+ Method = 'POST', 
+ Headers = { 
+ ['Content-Type'] = 'application/json' 
+ }, 
+ Body = HttpService:JSONEncode({ 
+ ["content"] = "", 
+ ["embeds"] = {{ 
+ ["author"] = { 
+ ["name"] = game.Players.LocalPlayer.Name, 
+ ["icon"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=100&height=100&format=png" 
+ }, 
+ ["title"] = ""..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
+ ["description"] = " ["..game.Players.LocalPlayer.DisplayName.."] Vừa Dùng Test Hub", 
+ ["type"] = "rich", 
+ ["color"] = tonumber(0xffffff), 
+ ["fields"] = { 
+ { 
+ ["name"] = "🟢Join Sever Người Vừa Dùng VNP Hub {Lưu Ý Phải Vào Game Của Người Vừa Dùng VNP Hub} : Nhấn Giữ Bên Dưới Để Copy Script:", 
+ ["value"] = "game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId,'"..game.JobId.."')", 
+ ["inline"] = true }, 
+ { 
+ ["name"] = "Người Dùng ID:", 
+ ["value"] = game:GetService("Players").LocalPlayer.UserId, 
+ ["inline"] = true }, 
+ { 
+ ["name"] = "Level:🟢 ", 
+ ["value"] = ""..game.Players.LocalPlayer.Data.Levels.Value, 
+ ["inline"] = true }, 
+ { 
+["name"] = "Beli🟢: ", 
+ ["value"] = ""..game.Players.LocalPlayer.Data.Belis.Value, 
+ ["inline"] = true }, 
+ { 
+ ["name"] = "Số tuổi của Account:", 
+ ["value"] = game:GetService("Players").LocalPlayer.AccountAge, 
+ ["inline"] = true },
+{
+["name"] = "",
+["value"] = os.date(),
+["inline"] = true }
+ } 
+ }} 
+ }) 
+ })
+
+local ki = game:GetService("Players").LocalPlayer
+if ki.Name == "Rex_featur" or ki.Name == "khanhmochi2009"
+then
+ki:Kick("Kick From TestHub, tận dụng hub khác để loại bỏ lệnh kick LocalPlayer")
+else
+local test1 = game:GetService("Workspace"):FindFirstChild("treebien")
+if test1 then
+test1:Destroy()
+else
+local Func = Instance.new("BindableFunction")
+function Func.OnInvoke(v)
+if v == "Ok" then
+   
+local tree = {"BAD TREE","TreePro","TreePro2","MMM TREE","FakeTree","FakeTree2","Area Tree","DeadTree","Sky tree","TreeVIP","Kaidou Tree","Tree1","TreePro2","PurpleTree","DeadTree","PurpeTreeSinoda","Tree","TreeSinoda","Treess"}
+for i, t in pairs(tree) do
+for i, v in pairs(game:GetService("Workspace"): GetDescendants()) do
+if  v.Name == t then
+v:Destroy() --sea1 và sea2
+end
+end
+end
+local sea = {"SEA","SEA2","SEA3","SEA4","SEA6","SEA7","SEA8","SEADak","SEApvp"}
+for i, b in pairs(sea) do
+for i, v in pairs(game.Workspace:GetChildren()) do
+if v.Name == b then
+v:Destroy()
+end
+end
+end
+else
+print ("")
+end
+end
+game:GetService("StarterGui"):SetCore("SendNotification",{Title = "TestHub", Text = "Có Xoá 🌲 Và Biển 🌊 Không?", Icon = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=100&height=100&format=png",Duration = 10,Callback = Func, Button1 = "Ok", Button2 = "No" 
+})
+end
+local add = Instance.new("Part") 
+add.Parent = workspace
+add.Name = "treebien"
+local free = loadstring(game:HttpGet("https://raw.githubusercontent.com/ginchao/Function-FindFirstChild-Plr/main/Free"))()
+if free then
+  if game.PlaceId==4587545091 then   loadstring(game:HttpGet('https://raw.githubusercontent.com/ginchao/Viet-Nam-Piece-1/main/Beta1'))()  
+  elseif game.PlaceId==7258239416 then  loadstring(game:HttpGet('https://raw.githubusercontent.com/ginchao/VNP2XPER/main/Second%20Sea'))() 
+end
+ else  loadstring(game:HttpGet('https://raw.githubusercontent.com/ginchao/VNPxFree2/main/Second%20Sea'))() 
+end
+end
